@@ -40,6 +40,13 @@ public class UsuarioController
         return this.usuarioService.obtenerPorPrioridad(prioridad);
     }
 
+    @GetMapping (path = "/email")//se realiza consulta a través del correo. salen todos los usuarios que tengan el correo puesto en la url
+    //ej http://localhost:8080/usuario/email?email=hablalo@gmail.com
+    public ArrayList<UsuarioModel>obtenerUsuarioPorEmail(@RequestParam("email")String email)
+    {
+        return  this.usuarioService.obtenerPorEmail(email);
+    }
+
     @DeleteMapping(path = "/{id}")
     public String eliminarPorId(@PathVariable("id")Long id)
     {
