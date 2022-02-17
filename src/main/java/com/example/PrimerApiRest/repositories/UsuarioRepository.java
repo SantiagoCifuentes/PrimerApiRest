@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public interface UsuarioRepository extends CrudRepository<UsuarioModel,Long> //el tipo de dato long es porque así se definió en el model
 
 {
+    //al ser abstractos podemos realizar la consultas sin programarlas
     public abstract ArrayList<UsuarioModel>findByPrioridad(Integer prioridad);
     public abstract ArrayList<UsuarioModel>findByEmail(String email);
+    public abstract ArrayList<UsuarioModel>findByNombre(String nombre);
 }

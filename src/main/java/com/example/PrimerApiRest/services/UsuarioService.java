@@ -36,9 +36,14 @@ public class UsuarioService
         return usuarioRepository.findByPrioridad(prioridad);
     }
 
-    public ArrayList<UsuarioModel>obtenerPorEmail(String email)
+    public ArrayList<UsuarioModel>obtenerPorEmail(String email)//consulta por email
     {
         return usuarioRepository.findByEmail(email);
+    }
+
+    public ArrayList<UsuarioModel>obtenerPorNombre(String nombre)
+    {
+        return usuarioRepository.findByNombre(nombre);
     }
 
     public boolean eliminarUsuario(Long id)

@@ -47,6 +47,13 @@ public class UsuarioController
         return  this.usuarioService.obtenerPorEmail(email);
     }
 
+    @GetMapping(path = "/nombre")//se realiza consulta a través del nombre. salen todos los usuarios que tengan el nombre puesto en la url
+    // ejemplo http://localhost:8080/usuario/nombre?nombre=Santiago
+    public ArrayList<UsuarioModel>obtenerUsuarioPorNombre(@RequestParam("nombre")String nombre)
+    {
+        return this.usuarioService.obtenerPorNombre(nombre);
+    }
+
     @DeleteMapping(path = "/{id}")
     public String eliminarPorId(@PathVariable("id")Long id)
     {
