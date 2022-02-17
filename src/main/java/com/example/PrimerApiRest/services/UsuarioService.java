@@ -16,7 +16,17 @@ public class UsuarioService
 
     public ArrayList<UsuarioModel>obtenerUsuarios()
     {
-        return(ArrayList<UsuarioModel>) usuarioRepository.findAll();//obtiene todos los registros
+
+        ArrayList<UsuarioModel> usuario = new ArrayList<UsuarioModel>();
+
+        if (usuario.isEmpty()) {
+            return(ArrayList<UsuarioModel>) usuarioRepository.findAll();//obtiene todos los registros
+        }
+         return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
+
+
+
+
     }
 
     public  UsuarioModel guardarUsuario(UsuarioModel usuario)
@@ -45,6 +55,12 @@ public class UsuarioService
     {
         return usuarioRepository.findByNombre(nombre);
     }
+
+   /* public long contarNombre(String name)
+    {
+        return  usuarioRepository.countByName(name);
+    }*/
+
 
     public boolean eliminarUsuario(Long id)
     {

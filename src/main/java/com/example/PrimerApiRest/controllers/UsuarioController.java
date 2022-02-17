@@ -54,6 +54,12 @@ public class UsuarioController
         return this.usuarioService.obtenerPorNombre(nombre);
     }
 
+    /*@GetMapping(path = "/count")
+    public long obtenerCount( String name) {
+        return this.usuarioService.contarNombre(name);
+    }*/
+
+
     @DeleteMapping(path = "/{id}")
     public String eliminarPorId(@PathVariable("id")Long id)
     {
